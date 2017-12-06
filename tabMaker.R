@@ -49,7 +49,6 @@ Make.LaTeX.Table = function(R.Matrix.Object,
 	}
 	
 	if (Col.Titles.Ind){
-	  print(Col.Titles.Ind)
 		lenoff = length(Col.Titles)
 		if (Row.Titles.Ind){
 			if (length(Col.Titles) == n.col){
