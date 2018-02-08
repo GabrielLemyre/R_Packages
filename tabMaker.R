@@ -29,7 +29,7 @@ Make.LaTeX.Table = function(R.Matrix.Object,
 	  nb.col.pos = n.col
 	}
 	
-	pos.col = paste(pos.col," ",chr(42),nb.col.pos,"{",Row.Pos,"} ",sep="")
+	pos.col = paste(pos.col," ",chr(42),'{',nb.col.pos,"}","{",Row.Pos,"} ",sep="")
 	
 	str = paste("% ------------------------ \n", 
 				chr(92),"begin{minipage}{",
