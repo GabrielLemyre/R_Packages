@@ -89,14 +89,14 @@ Make.LaTeX.Table = function(R.Matrix.Object,
 		Copie.Presse.Papier(paste(str,"\n",
 										chr(92),"end{tabular} \n",
 										chr(92),"end{minipage}","\n ~",chr(92),chr(92),
-										"\n % ------------------------",sep="")) # Copie le string concatene au presse-papier
+										"\n % ------------------------ \n",sep="")) # Copie le string concatene au presse-papier
 	}
 	
 	if(print.Cons){
 		str=cat(paste(str,"\n",
 							chr(92),"end{tabular} \n",
 							chr(92),"end{minipage}","\n ~",chr(92),chr(92),
-							"\n % ------------------------",sep="")) # Limprime aussi dans la console R
+							"\n % ------------------------ \n",sep="")) # Limprime aussi dans la console R
 	}
 }
 
