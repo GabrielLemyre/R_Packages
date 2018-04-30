@@ -10,15 +10,19 @@ Make.LaTeX.Table = function(R.Matrix.Object,
 							print.Cons=TRUE,
 							copy.CB=TRUE,...){ # Ecrit le code LaTeX dun environnement Tabular a partir dune matrice R
 	
-	n.col = ncol(R.Matrix.Object)
-	n.Row = nrow(R.Matrix.Object)
+	n.col = max(ncol(R.Matrix.Object),1)
+	print(n.col)
+	n.Row = max(nrow(R.Matrix.Object),length(R.Matrix.Object))
 	
 	Row.Titles.Ind = FALSE
 	Col.Titles.Ind = FALSE
 	if(!is.null(Row.Titles)){Row.Titles.Ind = TRUE}
 	if(!is.null(Col.Titles)){Col.Titles.Ind = TRUE}
-	
-	if(Row.Titles.Ind | Cross.Lines  & !(n.Row==1)){
+	print(Row.Titles.Ind)
+	print((Row.Titles.Ind | Cross.Lines))
+	print(!(n.Row==1))
+	print((Row.Titles.Ind | Cross.Lines)  & !(n.Row==1))
+	if((Row.Titles.Ind | Cross.Lines)  & !(n.Row==1)){
 	  pos.col = "r |"
 	  nb.col.pos = n.col
 	  if(Cross.Lines & !Row.Titles.Ind){
@@ -71,7 +75,7 @@ Make.LaTeX.Table = function(R.Matrix.Object,
 				str = Print.Nth.Element(R.Matrix.Object[i,k],str,k,last=isTRUE(k==n.col))
 			}
 		} else {
-			str = Print.Nth.Element(R.Matrix.Object[i,n.col],str,n.col,last=TRUE) # If one Column only, does that one only
+			str = Print.Nth.Element(R.Matrix.Object[i],str,n.col,last=TRUE) # If one Column only, does that one only
 		}
 		str=paste(str," ",chr(92),chr(92),sep="") # Adds the double backslash at the end of the line
 		if(!(i==n.Row)){str=paste(str,"\n",sep="")} # If it is the last line, it wont add line jump
