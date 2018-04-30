@@ -11,17 +11,12 @@ Make.LaTeX.Table = function(R.Matrix.Object,
 							copy.CB=TRUE,...){ # Ecrit le code LaTeX dun environnement Tabular a partir dune matrice R
 	
 	n.col = max(ncol(R.Matrix.Object),1)
-	print(n.col)
 	n.Row = max(nrow(R.Matrix.Object),length(R.Matrix.Object))
 	
 	Row.Titles.Ind = FALSE
 	Col.Titles.Ind = FALSE
 	if(!is.null(Row.Titles)){Row.Titles.Ind = TRUE}
 	if(!is.null(Col.Titles)){Col.Titles.Ind = TRUE}
-	print(Row.Titles.Ind)
-	print((Row.Titles.Ind | Cross.Lines))
-	print(!(n.Row==1))
-	print((Row.Titles.Ind | Cross.Lines)  & !(n.Row==1))
 	if((Row.Titles.Ind | Cross.Lines)  & !(n.Row==1)){
 	  pos.col = "r |"
 	  nb.col.pos = n.col
